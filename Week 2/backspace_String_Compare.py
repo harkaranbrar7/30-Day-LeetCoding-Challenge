@@ -31,31 +31,8 @@ Follow up:
 
 Can you solve it in O(N) time and O(1) space?
 '''
+
 class Solution1:
-    def backspaceCompare(self, S: str, T: str) -> bool:
-
-        a = [i for i, letter in enumerate(S) if letter == "#"]
-        b = [i for i, letter in enumerate(T) if letter == "#"]
-
-        S = S.replace('#', '')
-        T = T.replace("#", '')
-
-        print(S,T)
-
-
-        # for s in range(len(S)):
-            # if S[s] == "#":
-                
-                # new_str = S.replace('#', '')
-                # print(S)
-        
-        for t in T:
-            print(t)
-
-
-        return True
-
-class Solution2:
     def backspaceCompare(self, S: str, T: str) -> bool:
         def sim(S):
             ans = ''
@@ -67,7 +44,7 @@ class Solution2:
             return ans
         return sim(S) == sim(T)
 
-class Solution3:
+class Solution2:
     def backspaceCompare(self, S: str, T: str) -> bool:
         stackS, stackT = [], []
         for s in S:
@@ -82,7 +59,7 @@ class Solution3:
                 stackT.pop()
         return stackS == stackT
 
-class Solution4:
+class Solution3:
     def backspaceCompare(self, S: str, T: str) -> bool:
         ans_S = ""
         ans_T = ""
